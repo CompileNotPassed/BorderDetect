@@ -114,16 +114,20 @@ uint8 OTSU(uint8 *pic,uint16 num)
 
 //Border Detect
 void borderDetect(uint8 in[][160],uint8 out[][160]){
-		uint8 i,left,right;//,color=in[120][80];
+		uint8 i,left,right,color=in[120][80];
 		for(i=120;i>115;i--){
 			for(left=80;(in[i][left]==in[i][left-1])&&(left>0);left--){
 			}
 			for(right=80;(in[i][right]==in[i][right+1])&&(right<160);right++){
 			}
+			out[i][left]=103;
+			out[i][left+1]=103;
 			out[i][(left+right)/2]=100;
+			out[i][right]=106;
+			out[i][right-1]=106;
 		}
 		for(;i>1;i--){
-			if(in[i-1][left]!=in[i][left]){
+			if(in[i-1][left]!=color){
 				for(;in[i][left]==in[i][left+1];left++){
 				}
 			}
@@ -131,7 +135,7 @@ void borderDetect(uint8 in[][160],uint8 out[][160]){
 				for(;(in[i][left]==in[i][left-1])&&(left>1);left--){
 				}
 			}
-			if(in[i-1][right]!=in[i][right]){
+			if(in[i-1][right]!=color){
 				for(;in[i][right]==in[i][right-1];right--){
 				}
 			}
@@ -139,7 +143,11 @@ void borderDetect(uint8 in[][160],uint8 out[][160]){
 				for(;(in[i][right]==in[i][left+1])&&(right<159);right++){
 				}
 			}
+			out[i][left]=103;
+			out[i][left+1]=103;
 			out[i][(left+right)/2]=100;
+			out[i][right]=106;
+			out[i][right-1]=106;
 		}
 }
 
