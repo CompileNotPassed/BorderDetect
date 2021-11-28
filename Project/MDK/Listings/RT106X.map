@@ -14262,7 +14262,7 @@ Image Symbol Table
     UsageFault_Handler                       0x800083b9   Thumb Code     4  common.o(.text.UsageFault_Handler)
     __aeabi_assert                           0x80008461   Thumb Code    32  fsl_assert.o(.text.__aeabi_assert)
     board_init                               0x80008481   Thumb Code    36  board.o(.text.board_init)
-    borderDetect                             0x800084a9   Thumb Code   810  main.o(.text.borderDetect)
+    borderDetect                             0x800084a9   Thumb Code   814  main.o(.text.borderDetect)
     csi_add_empty_buffer                     0x800087d9   Thumb Code    28  zf_csi.o(.text.csi_add_empty_buffer)
     csi_get_full_buffer                      0x800087f9   Thumb Code    52  zf_csi.o(.text.csi_get_full_buffer)
     csi_init                                 0x80008831   Thumb Code   486  zf_csi.o(.text.csi_init)
@@ -14991,8 +14991,8 @@ Memory Map of the image
     0x80008460   0x7000a970   0x00000020   Code   RO         5900    .text.__aeabi_assert  fsl_assert.o
     0x80008480   0x7000a990   0x00000024   Code   RO           21    .text.board_init    board.o
     0x800084a4   0x7000a9b4   0x00000004   PAD
-    0x800084a8   0x7000a9b8   0x0000032a   Code   RO         5880    .text.borderDetect  main.o
-    0x800087d2   0x7000ace2   0x00000006   PAD
+    0x800084a8   0x7000a9b8   0x0000032e   Code   RO         5880    .text.borderDetect  main.o
+    0x800087d6   0x7000ace6   0x00000002   PAD
     0x800087d8   0x7000ace8   0x0000001c   Code   RO         4371    .text.csi_add_empty_buffer  zf_csi.o
     0x800087f4   0x7000ad04   0x00000004   PAD
     0x800087f8   0x7000ad08   0x00000034   Code   RO         4373    .text.csi_get_full_buffer  zf_csi.o
@@ -15160,7 +15160,7 @@ Image component sizes
         72          0         12          4         12      31857   fsl_usdhc.o
        430          0          0          0          0       6115   isr.o
        506          0        210          0          0       5353   lpuart_adapter.o
-      1396          8         49          0      20488       3628   main.o
+      1400          8         49          0      20488       3628   main.o
       1830          0        121          0          0      12045   seekfree_18tft.o
          0          0       1520          0          0        766   seekfree_font.o
        434          0          0          0      22565      19482   seekfree_mt9v03x.o
@@ -15184,7 +15184,7 @@ Image component sizes
     ----------------------------------------------------------------------
      78094        526       7032        180     169688     651502   Object Totals
          0          0         64          0       6144          0   (incl. Generated)
-       932          0          6          0         57          0   (incl. Padding)
+       928          0          6          0         57          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 

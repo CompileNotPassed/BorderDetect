@@ -122,7 +122,7 @@ void borderDetect(uint8 in[][160],uint8 out[][160]){
 			}
 			out[i][left]=103;
 			out[i][left+1]=103;
-			out[i][(left+right)/2]=100;
+			out[i][left/2+right/2]=100;
 			out[i][right]=106;
 			out[i][right-1]=106;
 		}
@@ -145,7 +145,7 @@ void borderDetect(uint8 in[][160],uint8 out[][160]){
 			}
 			out[i][left]=103;
 			out[i][left+1]=103;
-			out[i][(left+right)/2]=100;
+			out[i][left/2+right/2]=100;
 			out[i][right]=106;
 			out[i][right-1]=106;
 		}
