@@ -115,10 +115,10 @@ uint8 OTSU(uint8 *pic,uint16 num)
 //Border Detect
 void borderDetect(uint8 in[][160],uint8 out[][160]){
 		uint8 i,left,right,color=in[120][80];
-		for(i=120;i>115;i--){
-			for(left=80;(in[i][left]==in[i][left-1])&&(left>0);left--){
+		for(i=128;i>120;i--){
+			for(left=80;(in[i][left]==in[i][left-1])&&(left>1);left--){
 			}
-			for(right=80;(in[i][right]==in[i][right+1])&&(right<160);right++){
+			for(right=80;(in[i][right]==in[i][right+1])&&(right<158);right++){
 			}
 			out[i][left]=103;
 			out[i][left+1]=103;
@@ -140,7 +140,7 @@ void borderDetect(uint8 in[][160],uint8 out[][160]){
 				}
 			}
 			else{
-				for(;(in[i][right]==in[i][left+1])&&(right<159);right++){
+				for(;(in[i][right]==in[i][left+1])&&(right<158);right++){
 				}
 			}
 			out[i][left]=103;
