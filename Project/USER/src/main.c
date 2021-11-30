@@ -56,8 +56,107 @@
 
 
 #include "headfile.h"
+<<<<<<< HEAD
 #include "string.h"
 #include "Otsu.h"
+=======
+int i,j;
+uint8 frame[128][160];
+
+//Frame Process
+void picGamma(uint8 in_array[][168], uint8 out_array[][168], long height, long width)
+{
+    for (int i = 0; i < height; i++){
+        for (int j = 0; j <width; j++)
+             out_array[i][j] = (uint8)pow(in_array[i][j], 1.02);
+    }
+}
+
+#define Gourd 256
+uint8 OTSU(uint8 *pic,uint16 num)
+{
+   uint16 i=0;
+   uint16 Histogram[Gourd];
+   for (i=0;i<Gourd;i++)
+       Histogram[i]=0;
+
+   for (i=0;i<num;i++)
+   {
+       Histogram[(int)pic[i]*Gourd/256]++;
+   }
+
+  float pt[Gourd],w[Gourd],u[Gourd],o[Gourd],Ut;
+
+  pt[0]=(float)Histogram[0]/num;
+  w[0]=pt[0];
+  u[0]=w[0];
+
+  for(i=1;i<Gourd;i++)
+  {
+    pt[i]=(float)Histogram[i]/num; 
+    w[i]=w[i-1]+pt[i];
+    u[i]=u[i-1]+i*pt[i];
+  };
+  Ut=u[Gourd-1];
+
+  for(i=0;i<Gourd;i++)
+  {
+    o[i]=(1-pt[i])*(u[i]*u[i]/w[i]+(u[i]-Ut)*(u[i]-Ut)/(1-w[i]));
+  };
+
+  int maxi=0;
+  float maxo=0;
+
+  for(i=0;i<Gourd;i++)
+  {
+    if(o[i]!=0x7FC0000)
+    if(o[i]>maxo){maxo=o[i];maxi=i;}
+
+  }
+  return maxi*256/Gourd;
+}
+
+//Border Detect
+void borderDetect(uint8 in[][160],uint8 out[][160]){
+		uint8 i,left,right,color=in[120][80];
+		for(i=128;i>120;i--){
+			for(left=80;(in[i][left]==in[i][left-1])&&(left>1);left--){
+			}
+			for(right=80;(in[i][right]==in[i][right+1])&&(right<158);right++){
+			}
+			out[i][left]=103;
+			out[i][left+1]=103;
+			out[i][left/2+right/2]=100;
+			out[i][right]=106;
+			out[i][right-1]=106;
+		}
+		for(;i>1;i--){
+			if(in[i-1][left]!=color){
+				for(;in[i][left]==in[i][left+1];left++){
+				}
+			}
+			else{
+				for(;(in[i][left]==in[i][left-1])&&(left>1);left--){
+				}
+			}
+			if(in[i-1][right]!=color){
+				for(;in[i][right]==in[i][right-1];right--){
+				}
+			}
+			else{
+				for(;(in[i][right]==in[i][left+1])&&(right<158);right++){
+				}
+			}
+			out[i][left]=103;
+			out[i][left+1]=103;
+			out[i][left/2+right/2]=100;
+			out[i][right]=106;
+			out[i][right-1]=106;
+		}
+}
+
+
+>>>>>>> dfee3f9c7deb2157ad1b32499e85d322721c005e
 
 extern uint8 (*a)[MT9V03X_CSI_W];
 
