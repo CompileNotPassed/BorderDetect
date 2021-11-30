@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\Code\RT1064\Binarize\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.general.xcl" --backend -f "D:\Code\RT1064\Binarize\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.driver.xcl" 
+"D:\professional software\IAR8.3\common\bin\cspybat" -f "F:\项目程序\RT1064\RT1064_Library\Seekfree_RT1064_Opensource_Library\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.general.xcl" --backend -f "F:\项目程序\RT1064\RT1064_Library\Seekfree_RT1064_Opensource_Library\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.2\common\bin\cspybat" -f "D:\Code\RT1064\Binarize\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.general.xcl" "--debug_file=%~1" --backend -f "D:\Code\RT1064\Binarize\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.driver.xcl" 
+"D:\professional software\IAR8.3\common\bin\cspybat" -f "F:\项目程序\RT1064\RT1064_Library\Seekfree_RT1064_Opensource_Library\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.general.xcl" "--debug_file=%~1" --backend -f "F:\项目程序\RT1064\RT1064_Library\Seekfree_RT1064_Opensource_Library\Project\IAR\program\settings\RT106X.nor_sdram_zf_dtcm.driver.xcl" 
 
 @echo off 
 :end

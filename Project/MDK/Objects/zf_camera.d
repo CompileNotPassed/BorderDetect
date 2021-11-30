@@ -1,19 +1,19 @@
 ./objects/zf_camera.o: ..\..\Libraries\seekfree_libraries\zf_camera.c \
   ..\..\Libraries\nxp_libraries\drives\fsl_flexio_camera.h \
   ..\..\Libraries\nxp_libraries\drives\fsl_common.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\assert.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdint.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\assert.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\stdbool.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\stdint.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\string.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\stdlib.h \
   ..\..\Libraries\nxp_libraries\deceive\fsl_device_registers.h \
   ..\..\Libraries\nxp_libraries\deceive\MIMXRT1064.h \
   ..\..\Libraries\nxp_libraries\CMSIS\Include\core_cm7.h \
   ..\..\Libraries\nxp_libraries\CMSIS\Include\cmsis_version.h \
   ..\..\Libraries\nxp_libraries\CMSIS\Include\cmsis_compiler.h \
   ..\..\Libraries\nxp_libraries\CMSIS\Include\cmsis_armclang.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\arm_compat.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\arm_acle.h \
   ..\..\Libraries\nxp_libraries\CMSIS\Include\mpu_armv7.h \
   ..\..\Libraries\nxp_libraries\deceive\system_MIMXRT1064.h \
   ..\..\Libraries\nxp_libraries\deceive\MIMXRT1064_features.h \
@@ -22,7 +22,7 @@
   ..\..\Libraries\seekfree_libraries\zf_iomuxc.h \
   ..\..\Libraries\nxp_libraries\deceive\MIMXRT1064.h \
   ..\..\Libraries\seekfree_libraries\common\common.h \
-  C:\Keil_v5\ARM\ARMCLANG\Bin\..\include\math.h \
+  D:\keil5\ARM\ARMCLANG\Bin\..\include\math.h \
   ..\..\Libraries\seekfree_libraries\zf_camera.h \
   ..\..\Libraries\nxp_libraries\drives\fsl_flexio.h \
   ..\..\Libraries\nxp_libraries\drives\fsl_dmamux.h \

@@ -122,6 +122,6 @@ void lcd_displayimage032_zoom(uint8 *p, uint16 width, uint16 height, uint16 dis_
 void lcd_displayimage8660_zoom(uint16 *p, uint16 width, uint16 height, uint16 dis_width, uint16 dis_height);
 void lcd_displayimage7725(uint8 *p, uint16 width, uint16 height);
 void lcd_display_chinese(uint16 x, uint16 y, uint8 size, const uint8 *p, uint8 number, uint16 color);
-void lcdOutput(uint8 *p, uint16 width, uint16 height, uint16 dis_width, uint16 dis_height);
+
 
 #endif

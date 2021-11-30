@@ -16,7 +16,7 @@
         <TargetCommonOption>
           <Device>MIMXRT1064DVL6A</Device>
           <Vendor>NXP</Vendor>
-          <PackID>NXP.MIMXRT1064_DFP.13.1.1</PackID>
+          <PackID>NXP.MIMXRT1064_DFP.13.0.0</PackID>
           <PackURL>https://mcuxpresso.nxp.com/cmsis_pack/repo/</PackURL>
           <Cpu>IRAM(0x20000000,0x020000) IRAM2(0x00000000,0x020000) IROM(0x70000000,0x400000) XRAM(0x20200000,0x0c0000) CPUTYPE("Cortex-M7") FPU3(DFPU) CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -185,7 +185,6 @@
             <uocXRam>0</uocXRam>
             <RvdsVP>3</RvdsVP>
             <RvdsMve>0</RvdsMve>
-            <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -352,7 +351,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>4</ClangAsOpt>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>__STARTUP_INITIALIZE_NONCACHEDATA</Define>
@@ -1856,19 +1855,34 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Tools</GroupName>
+          <Files>
+            <File>
+              <FileName>Otsu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Tools\Otsu\Otsu.c</FilePath>
+            </File>
+            <File>
+              <FileName>Menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Tools\Menu\Menu.c</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
     <Target>
       <TargetName>nor_sdram_zf_dtcm_v6</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>6160000::V6.16::ARMCLANG</pCCUsed>
+      <pCCUsed>6120000::V6.12::.\ARMCLANG</pCCUsed>
       <uAC6>1</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>MIMXRT1064DVL6A</Device>
           <Vendor>NXP</Vendor>
-          <PackID>NXP.MIMXRT1064_DFP.13.1.1</PackID>
+          <PackID>NXP.MIMXRT1064_DFP.13.0.0</PackID>
           <PackURL>https://mcuxpresso.nxp.com/cmsis_pack/repo/</PackURL>
           <Cpu>IRAM(0x20000000,0x020000) IRAM2(0x00000000,0x020000) IROM(0x70000000,0x400000) XRAM(0x20200000,0x0c0000) CPUTYPE("Cortex-M7") FPU3(DFPU) CLOCK(12000000) ELITTLE</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
@@ -2037,7 +2051,6 @@
             <uocXRam>0</uocXRam>
             <RvdsVP>3</RvdsVP>
             <RvdsMve>0</RvdsMve>
-            <RvdsCdeCp>0</RvdsCdeCp>
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
@@ -2191,7 +2204,7 @@
               <MiscControls>-fno-common  -fdata-sections  -ffreestanding  -fno-builtin  -mthumb</MiscControls>
               <Define>CPU_MIMXRT1064DVL6A,SKIP_SYSCLK_INIT,XIP_EXTERNAL_FLASH=1, XIP_BOOT_HEADER_DCD_ENABLE =1, XIP_BOOT_HEADER_ENABLE =1,PRINTF_FLOAT_ENABLE=1, SCANF_FLOAT_ENABLE=1, PRINTF_ADVANCED_ENABLE=1, SCANF_ADVANCED_ENABLE=1,FSL_DRIVER_TRANSFER_DOUBLE_WEAK_IRQ=0,USB_STACK_BM,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CODE;..\USER\inc;..\USER\src;..\..\Libraries\seekfree_libraries;..\..\Libraries\nxp_libraries\CMSIS\Include;..\..\Libraries\nxp_libraries\cmsis_drivers;..\..\Libraries\nxp_libraries\drives;..\..\Libraries\nxp_libraries\startup;..\..\Libraries\nxp_libraries\startup\MDK-ARM;..\..\Libraries\nxp_libraries\utilities;..\..\Libraries\nxp_libraries\utilities\debug_console;..\..\Libraries\nxp_libraries\utilities\str;..\..\Libraries\nxp_libraries\xip;..\..\Libraries\nxp_libraries\deceive;..\..\Libraries\nxp_libraries\components\serial_manager;..\..\Libraries\nxp_libraries\components\uart;..\..\Libraries\nxp_libraries\components\lists;..\..\Libraries\nxp_libraries\components\osa;..\..\Libraries\nxp_libraries\components\serial_manager\usb_cdc_adapter;..\..\Libraries\nxp_libraries\middleware\usb\include;..\..\Libraries\nxp_libraries\middleware\usb\phy;..\..\Libraries\nxp_libraries\middleware\usb\device;..\..\Libraries\nxp_libraries\middleware\sdmmc\inc;..\..\Libraries\nxp_libraries\middleware\sdmmc\port;..\..\Libraries\nxp_libraries\middleware\sdmmc\port\usdhc;..\..\Libraries\nxp_libraries\middleware\sdmmc\port\usdhc\interrupt;..\..\Libraries\nxp_libraries\middleware\sdmmc\src;..\..\Libraries\nxp_libraries\middleware\fatfs\source;..\..\Libraries\nxp_libraries\middleware\fatfs\source\fsl_sd_disk;..\..\Libraries\seekfree_libraries\common;..\..\Libraries\seekfree_libraries\board;..\..\Libraries\seekfree_peripheral</IncludePath>
+              <IncludePath>..\CODE;..\USER\inc;..\USER\src;..\..\Libraries\seekfree_libraries;..\..\Libraries\nxp_libraries\CMSIS\Include;..\..\Libraries\nxp_libraries\cmsis_drivers;..\..\Libraries\nxp_libraries\drives;..\..\Libraries\nxp_libraries\startup;..\..\Libraries\nxp_libraries\startup\MDK-ARM;..\..\Libraries\nxp_libraries\utilities;..\..\Libraries\nxp_libraries\utilities\debug_console;..\..\Libraries\nxp_libraries\utilities\str;..\..\Libraries\nxp_libraries\xip;..\..\Libraries\nxp_libraries\deceive;..\..\Libraries\nxp_libraries\components\serial_manager;..\..\Libraries\nxp_libraries\components\uart;..\..\Libraries\nxp_libraries\components\lists;..\..\Libraries\nxp_libraries\components\osa;..\..\Libraries\nxp_libraries\components\serial_manager\usb_cdc_adapter;..\..\Libraries\nxp_libraries\middleware\usb\include;..\..\Libraries\nxp_libraries\middleware\usb\phy;..\..\Libraries\nxp_libraries\middleware\usb\device;..\..\Libraries\nxp_libraries\middleware\sdmmc\inc;..\..\Libraries\nxp_libraries\middleware\sdmmc\port;..\..\Libraries\nxp_libraries\middleware\sdmmc\port\usdhc;..\..\Libraries\nxp_libraries\middleware\sdmmc\port\usdhc\interrupt;..\..\Libraries\nxp_libraries\middleware\sdmmc\src;..\..\Libraries\nxp_libraries\middleware\fatfs\source;..\..\Libraries\nxp_libraries\middleware\fatfs\source\fsl_sd_disk;..\..\Libraries\seekfree_libraries\common;..\..\Libraries\seekfree_libraries\board;..\..\Libraries\seekfree_peripheral;.\Tools\Otsu;.\Tools\Menu</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2204,7 +2217,7 @@
             <NoWarn>0</NoWarn>
             <uSurpInc>0</uSurpInc>
             <useXO>0</useXO>
-            <ClangAsOpt>4</ClangAsOpt>
+            <uClangAs>0</uClangAs>
             <VariousControls>
               <MiscControls></MiscControls>
               <Define>__STARTUP_INITIALIZE_NONCACHEDATA</Define>
@@ -3704,6 +3717,21 @@
               <FileName>fsl_flexspi_nor_boot.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Libraries\nxp_libraries\xip\fsl_flexspi_nor_boot.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Tools</GroupName>
+          <Files>
+            <File>
+              <FileName>Otsu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Tools\Otsu\Otsu.c</FilePath>
+            </File>
+            <File>
+              <FileName>Menu.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Tools\Menu\Menu.c</FilePath>
             </File>
           </Files>
         </Group>

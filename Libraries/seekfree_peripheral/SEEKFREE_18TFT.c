@@ -144,7 +144,7 @@ void lcd_clear(int color)
 //-------------------------------------------------------------------------------------------------------------------
 void lcd_init(void)
 {	
-    spi_init(TFT_SPIN, TFT_SCL, TFT_SDA, TFT_SDA_IN, TFT_CS, 0, 30*1000*1000);//硬件SPI初始化
+    spi_init(TFT_SPIN, TFT_SCL, TFT_SDA, TFT_SDA_IN, TFT_CS, 0, 100*1000*1000);//硬件SPI初始化
     
     gpio_init(BL_PIN,GPO,1,GPIO_PIN_CONFIG);
     gpio_init(DC_PIN,GPO,0,GPIO_PIN_CONFIG);
@@ -647,7 +647,7 @@ void lcd_displayimage032_zoom(uint8 *p, uint16 width, uint16 height, uint16 dis_
                 
     uint16 color = 0;
 	uint16 temp = 0;
-
+		uint16 minus=(width-dis_width)/2;
     lcd_set_region(0,0,dis_width-1,dis_height-1);//设置显示区域 
     
     for(j=0;j<dis_height;j++)
@@ -768,42 +768,4 @@ void lcd_display_chinese(uint16 x, uint16 y, uint8 size, const uint8 *p, uint8 n
 }
 
 
-void lcdOutput(uint8 *p, uint16 width, uint16 height, uint16 dis_width, uint16 dis_height)
-{
-    uint32 i,j;
-                
-    uint16 color = 0;
-	uint16 temp = 0;
 
-    lcd_set_region(0,0,dis_width-1,dis_height-1);//设置显示区域 
-    
-    for(j=0;j<dis_height;j++)
-    {
-        for(i=0;i<dis_width;i++)
-        {
-            temp = *(p+(j*height/dis_height)*width+i*width/dis_width);//读取像素点
-						
-					//COLOR DEFINATION
-					
-						switch(temp){
-							case 100: {color=RED;break;}
-							case 101: {color=BLUE;break;}
-							case 102: {color=YELLOW;break;}
-							case 103: {color=GREEN;break;}
-							case 255: {color=WHITE;break;}
-							case 0: {color=BLACK;break;}
-							case 104: {color=GRAY;break;}
-							case 105: {color=BROWN;break;}
-							case 106: {color=PURPLE;break;}
-							case 107: {color=PINK;break;}
-							default:{
-								color=(0x001f&((temp)>>3))<<11;
-								color=color|(((0x003f)&((temp)>>2))<<5);
-								color=color|(0x001f&((temp)>>3));
-								
-							}
-						}
-						lcd_writedata_16bit(color); 
-        }
-    }
-}
